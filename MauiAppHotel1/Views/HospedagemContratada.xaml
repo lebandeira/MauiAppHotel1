@@ -7,7 +7,7 @@
              BackgroundColor="{StaticResource Gray200}">
     
     <VerticalStackLayout VerticalOptions="Center">
-        <Label Text="Suíte Super Luxo"
+        <Label Text="{Binding QuartoSelecionado.Descricao}"
                TextColor="DarkCyan"
                FontFamily="PlaywriteExtra"
                FontAttributes="Bold"
@@ -15,17 +15,16 @@
                HorizontalTextAlignment="Center"/>
 
         <Frame Margin="10">
-            <HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="Center">
                 <HorizontalStackLayout>
                     <Label Text="Adultos: "/>
-                    <Label Text="2" 
+                    <Label Text="{Binding QntAdulto}" 
                            TextColor="DarkCyan"/>
-
                 </HorizontalStackLayout>
                 
                 <HorizontalStackLayout>
                     <Label Text="Crianças: "/>
-                    <Label Text="2"
+                    <Label Text="{Binding QntCriancas}"
                            TextColor="DarkCyan"/>
                 </HorizontalStackLayout>
                 
@@ -39,9 +38,9 @@
                 <Label Grid.Row="0" Grid.Column="1" Text="Check-out: "/>
                 <Label Grid.Row="0" Grid.Column="2" Text="Estadia: "/>
 
-                <Label Grid.Row="1" Grid.Column="0" Text="27/05/2025"/>
-                <Label Grid.Row="1" Grid.Column="1" Text="30/05/2025"/>
-                <Label Grid.Row="1" Grid.Column="2" Text="3"/>
+                <Label Grid.Row="1" Grid.Column="0" Text="{Binding DataCheckIn, StringFormat='{}{0:dd/MM/yyyy}'}"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding DataCheckOut,StringFormat='{}{0:dd/MM/yyyy}'}"/>
+                <Label Grid.Row="1" Grid.Column="2" Text="{Binding Estadia}"/>
                 
             </Grid>            
         </Frame>
@@ -49,7 +48,7 @@
         <Frame Margin="10">
             <HorizontalStackLayout>
                 <Label Text="Valor total: "/>
-                <Label Text=" R$ 900,00"/>
+                <Label Text="{Binding ValorTotal,StringFormat='{}{0:c}'}"/>
                 
             </HorizontalStackLayout>            
         </Frame>
